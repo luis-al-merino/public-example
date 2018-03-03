@@ -1,0 +1,8 @@
+@import "./variables";
+
+/* You can add global styles to this file, and also import other style files */
+body {
+	//background: no-repeat linear-gradient(#808080, $grey-dark);
+  background-color: $grey-dark !important;
+  position: relative;
+}

@@ -1,0 +1,23 @@
+@import "../../common/styles/variables";
+
+.game-spot {}
+.game-spot__header {
+  color: $main-text;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.game-spot__imagen {
+  width: 100%;
+}
+.game-spot__btn-secret {
+  border: 0px;
+  cursor: default !important;
+  position: absolute;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.disabled {
+  display: none;
+}

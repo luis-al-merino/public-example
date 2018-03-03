@@ -1,0 +1,58 @@
+  <div class="cart d-inline-flex justify-content-between align-items-center"
+       [ngClass]="{'cart--empty': cart.products.length === 0 &&
+       !isCartVisible }"
+       (mouseenter)="showCart()"
+       (mouseleave)="hideCart()"
+       (click)="toggleCart()">
+  <div class="cart__spacer"></div>
+  <div class="cart__icon__holder d-inline-flex justify-content-between
+      align-items-center">
+    <img src="../../assets/ico-cart.png" alt="cart icon" class="cart__icon">
+    <div class="cart__count badge">
+     {{cart.products.length}}
+    </div>
+  </div>
+  <div class="cart__spacer"></div>
+</div>
+
+<div class="dropdown-cart" [ngClass]="{'dropdown-cart--hidden': !isCartVisible }"
+     (mouseenter)="showCart()"
+     (mouseleave)="hideCart()">
+  <div class="dropdown-cart__header d-inline-flex justify-content-between
+    align-items-center">
+
+    <div class="dropdown-cart__summary d-inline-flex justify-content-between
+       align-items-center">
+      <div class="dropdown-cart__summary__items">
+        {{cart?.products.length}} ITEMS IN CART
+      </div>
+      <div class="dropdown-cart__summary__total">
+        $ {{cart?.totalPrice | number: '1.2-2'}}
+      </div>
+    </div>
+
+    <button class="dropdown-cart__clear-all btn btn-primary"
+            [ngClass]="{'disabled': cart.products.length === 0 }"
+            (click)="emptyCart()">CLEAR CART</button>
+  </div>
+
+  <div *ngFor="let product of cart.products" class="dropdown-cart__product">
+    <div class="dropdown-cart__spacer"></div>
+
+    <div class="dropdown-cart__product__holder d-flex
+      justify-content-between align-items-center">
+      <a [href]="product.url">
+        <img [src]="product.image" [alt]="product.name"
+             class="dropdown-cart__product__img">
+      </a>
+      <div class="dropdown-cart__product__info">
+        <div class="dropdown-cart__product__title">{{product.name}}</div>
+        <div class="dropdown-cart__product__remove"
+        (click)="removeFromCart(product)">Remove</div>
+      </div>
+      <div class="dropdown-cart__product__price">$
+        {{product.totalPrice | number: '1.2-2' }}
+      </div>
+    </div>
+  </div>
+</div>

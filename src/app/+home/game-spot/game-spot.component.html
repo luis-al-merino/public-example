@@ -1,0 +1,17 @@
+<div class="game-spot">
+  <h6 class="game-spot__header">Game of the week</h6>
+  <div class="game-spot__container d-flex align-items-center
+    justify-content-center embed-responsive">
+    <img class="game-spot__imagen"
+         src={{gameOfTheWeek.image}}
+         alt={{gameOfTheWeek.name}}>
+    <button class="game-spot__btn-secret btn btn-dark mx-auto"
+      (click)="play()">The secret button</button>
+    <iframe id="player" width="560" height="215"
+      src="https://www.youtube.com/embed/x05hIYpw1lU?enablejsapi=1&rel=0&start=14&amp;showinfo=0&amp;controls=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+      [ngClass]="{'disabled': !secretBtnActive}"
+      class="embed-responsive-item"></iframe>
+  </div>
+</div>
+

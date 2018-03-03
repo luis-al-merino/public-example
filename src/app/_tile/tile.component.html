@@ -1,0 +1,29 @@
+<div class="tile__container">
+  <a class="tile__link" [href]="_tile?.url">
+    <img class="tile__image" [src]="_tile.image" [alt]="_tile.name">
+    <p [ngClass]="{'tile__title': true,
+                   'tile__title--owned': _tile.status === 'owned',
+                   'tile__title--in-cart': _tile.status === 'inCart'}">
+      {{_tile.name}}
+    </p>
+  </a>
+  <div class="tile__buttons-group float-right">
+    <button *ngIf="_tile.discount" class="tile__button
+    tile__button--discount btn btn-success btn-sm disabled">
+      -{{_tile.discount}}%
+    </button>
+    <button *ngIf="_tile.status === 'onSale'" class="tile__button
+    tile__button--price btn btn-outline-secondary btn-sm"
+    (click)="addItemToCart()">
+      $ {{_tile.price}}
+    </button>
+    <button *ngIf="_tile.status === 'owned'" class="tile__button
+    tile__button--owned btn btn-outline-secondary btn-sm disabled">
+      OWNED
+    </button>
+    <button *ngIf="_tile.status === 'inCart'" class="tile__button
+    tile__button--in-cart btn btn-outline-secondary btn-sm disabled ">
+      IN CART
+    </button>
+  </div>
+</div>

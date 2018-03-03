@@ -1,0 +1,17 @@
+@import "../common/styles/variables";
+
+.navbar {
+  background-color: $grey;
+  box-shadow: 0 10px 20px #808080;
+  height: 60px;
+  padding: 0 109px 0 110px;
+}
+.navbar__logo-hoder {}
+.navbar__logo {
+  height: 31px;
+  width: 34px;
+}
+
+app-cart {
+  height: 60px;
+}

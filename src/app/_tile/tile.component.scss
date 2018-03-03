@@ -1,0 +1,61 @@
+@import "../common/styles/variables";
+
+.tile__container {
+  background-color: $grey;
+  width: 196px;
+  height: 185px;
+  margin-top: 20px;
+  /*
+  margin-left: 20px;
+  &:first {
+    margin-left: 0px;
+  }
+  */
+}
+.tile__link {
+  text-decoration: none;
+}
+
+.tile__image {}
+
+.tile__title {
+  color: $light-text;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  margin: 11px 9px 3px;
+  text-transform: uppercase;
+  &--in-cart {
+  }
+  &--owned {
+    color: $lightest-text;
+  }
+}
+
+.tile__buttons-group {}
+
+.tile__button {
+  height: 24px;
+  font-size: 10px;
+  font-weight: 700;
+  &:focus{
+    box-shadow: none;
+  }
+  &--discount {
+    margin-right: 5px;
+    opacity: 1;
+  }
+  &--price,
+  &--in-cart,
+  &--owned {
+    margin-right: 7px;
+  }
+  &--in-cart {
+    color: $light-text;
+    border-color: $light-text;
+  }
+  &--owned {
+    color: $lightest-text;
+    border-color: $lightest-text;
+  }
+}
